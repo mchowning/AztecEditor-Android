@@ -28,6 +28,7 @@ import android.text.Spanned
 import android.text.TextUtils
 import android.text.style.CharacterStyle
 import android.text.style.ForegroundColorSpan
+import android.util.Log
 import org.wordpress.aztec.extensions.toCssString
 import org.wordpress.aztec.plugins.IAztecPlugin
 import org.wordpress.aztec.plugins.html2visual.ISpanPostprocessor
@@ -86,6 +87,7 @@ class AztecParser @JvmOverloads constructor(val plugins: List<IAztecPlugin> = li
 
         postprocessSpans(spanned)
 
+        Log.i("AztecParser::fromHtml", "source: ${source}, spanned: ${spanned}")
         return spanned
     }
 

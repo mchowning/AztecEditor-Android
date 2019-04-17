@@ -176,6 +176,14 @@ class HtmlFormattingTest : AndroidTestCase() {
         context = MockContext()
     }
 
+    @Test
+    @Throws(Exception::class)
+    fun formatWithSpace() {
+        val input = "<figcaption>A <br></figcaption>"
+        val output = Format.removeSourceEditorFormatting(input)
+        Assert.assertEquals(input, output)
+    }
+
     /**
      * Test the conversion from HTML to visual mode with nested HTML
      *

@@ -47,6 +47,7 @@ import android.text.TextWatcher
 import android.text.style.SuggestionSpan
 import android.util.AttributeSet
 import android.util.DisplayMetrics
+import android.util.Log
 import android.view.KeyEvent
 import android.view.LayoutInflater
 import android.view.MotionEvent
@@ -1129,6 +1130,7 @@ open class AztecText : AppCompatEditText, TextWatcher, UnknownHtmlSpan.OnUnknown
     }
 
     open fun fromHtml(source: String, isInit: Boolean = true) {
+        Log.d("AztecText", "source: $source, isInit: $isInit")
         val builder = SpannableStringBuilder()
         val parser = AztecParser(plugins)
 
@@ -1152,6 +1154,7 @@ open class AztecText : AppCompatEditText, TextWatcher, UnknownHtmlSpan.OnUnknown
         enableTextChangedListener()
 
         setSelection(cursorPosition)
+        Log.d("AztecText", "after setSelection")
 
         if (isInit) {
             initialEditorContentParsedSHA256 = calculateInitialHTMLSHA(toPlainHtml(false), initialEditorContentParsedSHA256)

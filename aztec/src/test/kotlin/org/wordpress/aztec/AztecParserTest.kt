@@ -1228,4 +1228,41 @@ class AztecParserTest : AndroidTestCase() {
         val output = mParser.toHtml(span)
         Assert.assertEquals(input, output)
     }
+
+//    @Test
+//    @Throws(Exception::class)
+//    fun parseParagraphContainingLineBreak() {
+//        val input = "<p>a<br></p>"
+//        val span = SpannableString(mParser.fromHtml(input, RuntimeEnvironment.application.applicationContext))
+//        val output = mParser.toHtml(span)
+//        Assert.assertEquals("<p>a</p>", output) // removes <br> tag
+//    }
+//
+//    @Test
+//    @Throws(Exception::class)
+//    fun parseDivContainingLineBreak() {
+//        val input = "<div>a<br></div>"
+//        val span = SpannableString(mParser.fromHtml(input, RuntimeEnvironment.application.applicationContext))
+//        val output = mParser.toHtml(span)
+//        Assert.assertEquals("<div>a</div><br>", output) // moves, but does not remove, <br> tag
+//    }
+//
+//    @Test
+//    @Throws(Exception::class)
+//    fun parseDivContainingLineBreak2() {
+//        val input = "<figcaption>a <br></figcaption>"
+//        val span = SpannableString(mParser.fromHtml(input, RuntimeEnvironment.application.applicationContext))
+//        val output = mParser.toHtml(span)
+//        Assert.assertEquals("<figcaption>a </figcaption><br>", output)
+//    }
+//
+//    @Test
+//    @Throws(Exception::class)
+//    fun parseFigcaption() {
+//        val input = "<figcaption>a<br></figcaption>"
+//        val span = SpannableString(mParser.fromHtml(input, RuntimeEnvironment.application.applicationContext))
+//        val output = mParser.toHtml(span)
+//        Assert.assertEquals("<div>a</div><br>", output) // moves, but does not remove, <br> tag
+//    }
+
 }
